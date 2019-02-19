@@ -14,11 +14,11 @@ public class Haiku
 
 	public static void Main()
 	{
-		Haiku haiku = new Haiku("words.txt");
+		var haiku = new Haiku(/*"words.txt"*/);
 		haiku.Pattern1();
 	}
 
-	public Haiku(string wordfile)
+	public Haiku(/*string wordfile*/)
 	{
 		_articles = new List<string>();
 		_nouns = new List<string>();
@@ -31,20 +31,18 @@ public class Haiku
 
 	public void Pattern1()
 	{
-		string adj = Adjective;
-		Console.WriteLine(string.Format("{0} {1} {2}...",
-			GetArticle(adj), adj, Noun));
+		string adj = Adjective();
+		Console.WriteLine(string.Format("{0} {1} {2}...", GetArticle(adj), adj, Noun()));
 
-		string noun1 = Noun;
-		string noun2 = Noun;
+		string noun1 = Noun();
+		string noun2 = Noun();
 		Console.WriteLine(string.Format("{0} {1} {2} {3} {4} {5}",
-			GetArticle(noun1), noun1, Verb, Preposition, GetArticle(noun2), noun2));
+			GetArticle(noun1), noun1, Verb(), Preposition(), GetArticle(noun2), noun2));
 
-		Console.WriteLine(string.Format("{0} {1} {2}",
-			Adjective, Adjective, Noun));
+		Console.WriteLine(string.Format("{0} {1} {2}", Adjective(), Adjective(), Noun()));
 	}
 
-	public string GetArticle(string nextWord)
+	private string GetArticle(string nextWord)
 	{
 		int i = _rand.Next(_articles.Count);
 
@@ -62,43 +60,31 @@ public class Haiku
 		return art;
 	}
 
-	public string Adjective
-	{
-		get
-		{
-			int i = _rand.Next(_adjectives.Count);
-			return _adjectives[i];
-		}
-	}
+    private string Adjective()
+    {
+        int i = _rand.Next(_adjectives.Count);
+        return _adjectives[i];
+    }
 
-	public string Noun
-	{
-		get
-		{
-			int i = _rand.Next(_nouns.Count);
-			return _nouns[i];
-		}
-	}
+    private string Noun()
+    {
+        int i = _rand.Next(_nouns.Count);
+        return _nouns[i];
+    }
 
-	public string Verb
-	{
-		get
-		{
-			int i = _rand.Next(_verbs.Count);
-			return _verbs[i];
-		}
-	}
+    private string Verb()
+    {
+        int i = _rand.Next(_verbs.Count);
+        return _verbs[i];
+    }
 
-	public string Preposition
-	{
-		get
-		{
-			int i = _rand.Next(_prepositions.Count);
-			return _prepositions[i];
-		}
-	}
+    private string Preposition()
+    {
+        int i = _rand.Next(_prepositions.Count);
+        return _prepositions[i];
+    }
 
-	public void Init()
+    private void Init()
 	{
 		_articles = new List<string>();
 		_articles.AddRange(
@@ -134,10 +120,9 @@ public class Haiku
 		_prepositions = new List<string>();
 		_prepositions.AddRange(
 			new string[] { "on", "of", "in", "under", "over", "near" });
-
 	}
 
-	public void Init_old(string wordfile)
+	private void Init_old(string wordfile)
 	{
 		bool parseArticles = false;
 		string[] lines = File.ReadAllLines(wordfile);

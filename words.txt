@@ -1,0 +1,25 @@
+# Haiku data file
+
+articles:
+a, an, the
+
+adjectives:
+autumn, hidden, bitter, misty, silent, empty, dry, dark, summer, icy,
+delicatre, quiet, white, cool, spring, winter, dappled, twilight, dawn, crimson, 
+wispy, azure, blue, billowing, broken, cold, damp, falling, frosty, green, long,
+late, lingering, limpid, still, small, sparkling, throbbing, vermilion, 
+wandering, withered, wild, black, young
+
+nouns:
+waterfall, river, breeze, moon, rain, wind, sea, morning, snow, lake, sunset,
+pine, shadow, leaf, dawn, glitter, forest, hill, cloud, meadow, sun, glade, 
+bird, brook, butterfly, bush, dew, dust, field, fir, flower, firefly, feather,
+grass, haze, mountain, night, pond, shade, snowflake, silence, sound, sky, 
+shape, surf, thunder, violet, water, wildflower, wave
+
+verbs:
+shakes, drifts, has stopped, struggles, has fallen, has passed, sleeps, creeps,
+flutters, has risen, is falling, is trickling, murmurs, is floating
+
+prepositions:
+on, of, in, under, over, near
